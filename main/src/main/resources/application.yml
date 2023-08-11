@@ -1,0 +1,45 @@
+micronaut:
+  application:
+    name: txwithr2dbc
+  server:
+    port: 8080
+
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+flyway:
+  datasources:
+    migration:
+      enabled: true
+      baseline-on-migrate: true
+
+datasources:
+  migration:
+    dialect: MYSQL
+    driverClassName: com.mysql.cj.jdbc.Driver
+    schema-generate: NONE
+    url: jdbc:mysql://localhost:3306/txwithr2dbc
+    username: root
+    password: root
+    db-type: mysql
+    maximum-pool-size: 2
+    minimum-idle: 0
+
+r2dbc:
+  datasources:
+    default:
+      options:
+        driver: pool
+        protocol: mysql
+        initialSize: 5
+        maxSize: 50
+        minIdle: 1
+      schema-generate: NONE
+      url: r2dbc:mysql://localhost:3306/txwithr2dbc
+      username: root
+      password: root
+      dialect: MYSQL
+      driver: mysql
+      db-type: mysql

@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: example.micronaut
+testFramework: junit
+sourceLanguage: kotlin
+buildTool: gradle_kotlin
+features: [annotation-api, app-name, data, data-r2dbc, flyway, graalvm, gradle, http-client, jdbc-hikari, junit, kotlin, kotlin-application, kotlin-build, logback, micronaut-aot, micronaut-build, mysql, netty-server, r2dbc, reactor, reactor-http-client, readme, serialization-jackson, shade, test-resources, yaml]

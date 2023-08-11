@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/employee"
+  },
+  "response": {
+    "status": 201,
+    "bodyFileName": "postEmployeeResponse.json",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": ["response-template"]
+  }
+}

@@ -15,9 +15,11 @@ import io.micronaut.http.HttpMethod
 import io.micronaut.http.HttpStatus
 import io.micronaut.test.extensions.kotest5.annotation.MicronautTest
 import jakarta.inject.Inject
+import kotlinx.coroutines.reactive.awaitSingle
 import kotlinx.coroutines.runBlocking
 import org.instancio.Instancio.create
 import org.junit.jupiter.api.Assertions.assertEquals
+import reactor.core.publisher.Mono
 import reactor.kotlin.core.publisher.toMono
 
 @MicronautTest(transactional = false)
@@ -52,8 +54,8 @@ class EmployeeIntegrationTest : ShouldSpec() {
 
         beforeEach {
             operations.withTransaction {
-                runBlocking { employeeDataAccessPort.deleteAll().toMono() }
-            }
+                Mono.fromDirect(runBlocking { employeeDataAccessPort.deleteAll() }.toMono())
+            }.awaitSingle()
         }
 
         should("insert an employee") {
@@ -65,8 +67,8 @@ class EmployeeIntegrationTest : ShouldSpec() {
             )
 
             operations.withTransaction {
-                runBlocking { employeeController.create().toMono() }
-            }
+                Mono.fromDirect(runBlocking { employeeController.create().toMono() })
+            }.awaitSingle()
 
             assertEquals(1L, employeeDataAccessPort.count())
             assertEquals(1L, externalEmployeeDataAccessPort.count())
@@ -83,8 +85,8 @@ class EmployeeIntegrationTest : ShouldSpec() {
             // simulating an error in AcmeAdapter every 5 times...
             repeat(5) {
                 operations.withTransaction {
-                    runBlocking { employeeController.create().toMono() }
-                }
+                    Mono.fromDirect(runBlocking { employeeController.create().toMono() })
+                }.awaitSingle()
             }
 
             assertEquals(4L, employeeDataAccessPort.count())

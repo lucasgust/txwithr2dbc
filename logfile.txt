@@ -1,0 +1,96 @@
+13:39:28,165 |-INFO in ch.qos.logback.classic.LoggerContext[default] - This is logback-classic version 1.4.11
+13:39:28,166 |-INFO in ch.qos.logback.classic.util.ContextInitializer@3b938003 - No custom configurators were discovered as a service.
+13:39:28,167 |-INFO in ch.qos.logback.classic.util.ContextInitializer@3b938003 - Trying to configure with ch.qos.logback.classic.joran.SerializedModelConfigurator
+13:39:28,167 |-INFO in ch.qos.logback.classic.util.ContextInitializer@3b938003 - Constructed configurator of type class ch.qos.logback.classic.joran.SerializedModelConfigurator
+13:39:28,181 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.scmo]
+13:39:28,181 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.scmo]
+13:39:28,187 |-INFO in ch.qos.logback.classic.util.ContextInitializer@3b938003 - ch.qos.logback.classic.joran.SerializedModelConfigurator.configure() call lasted 14 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+13:39:28,187 |-INFO in ch.qos.logback.classic.util.ContextInitializer@3b938003 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+13:39:28,187 |-INFO in ch.qos.logback.classic.util.ContextInitializer@3b938003 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+13:39:28,187 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+13:39:28,189 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/Users/lucassouza/workspace/personal/txwithr2dbc/main/build/resources/main/logback.xml]
+13:39:28,249 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [PLAIN_TEXT]
+13:39:28,249 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+13:39:28,254 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:39:28,262 |-INFO in ch.qos.logback.classic.pattern.DateConverter@6f3b5d16 - Setting zoneId to "UTC"
+13:39:28,264 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [JSON] not referenced. Skipping further processing.
+13:39:28,264 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [example.micronaut.txwithr2dbc] to DEBUG
+13:39:28,264 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.micronaut.data] to INFO
+13:39:28,264 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.micronaut.context.env] to INFO
+13:39:28,264 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.r2dbc.pool] to INFO
+13:39:28,264 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+13:39:28,265 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [PLAIN_TEXT] to Logger[ROOT]
+13:39:28,265 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@78b1cc93 - End of configuration.
+13:39:28,265 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@6646153 - Registering current configuration as safe fallback point
+13:39:28,265 |-INFO in ch.qos.logback.classic.util.ContextInitializer@3b938003 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 78 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+ __  __ _                                  _   
+|  \/  (_) ___ _ __ ___  _ __   __ _ _   _| |_ 
+| |\/| | |/ __| '__/ _ \| '_ \ / _` | | | | __|
+| |  | | | (__| | | (_) | | | | (_| | |_| | |_ 
+|_|  |_|_|\___|_|  \___/|_| |_|\__,_|\__,_|\__|
+2023-09-19T16:39:28.709Z INFO HikariDataSource - HikariPool-1 - Starting...
+2023-09-19T16:39:29.000Z INFO HikariDataSource - HikariPool-1 - Start completed.
+2023-09-19T16:39:29.067Z INFO AbstractFlywayMigration - Running migrations for database with qualifier [migration]
+set. 19, 2023 1:39:29 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.21.2 by Redgate
+set. 19, 2023 1:39:29 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+set. 19, 2023 1:39:29 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+set. 19, 2023 1:39:29 PM org.flywaydb.core.FlywayExecutor execute
+INFO: Database: jdbc:mysql://localhost:3306/txwithr2dbc (MySQL 8.0)
+set. 19, 2023 1:39:29 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 1 migration (execution time 00:00.022s)
+set. 19, 2023 1:39:29 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema `txwithr2dbc`: 001
+set. 19, 2023 1:39:29 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema `txwithr2dbc` is up to date. No migration necessary.
+2023-09-19T16:39:29.684Z INFO Micronaut - Startup completed in 1405ms. Server Running: http://localhost:8080
+2023-09-19T16:39:32.194Z INFO EmployeeDataAccessAdapter - before [httpPath=/employees, httpMethod=GET, requestId=2eaf89de-6d4c-45cc-b174-08fe1a3b1da2]
+2023-09-19T16:39:32.252Z INFO EmployeeDataAccessAdapter - after/flow [httpPath=/employees, httpMethod=GET, requestId=2eaf89de-6d4c-45cc-b174-08fe1a3b1da2]
+2023-09-19T16:39:32.291Z ERROR DnsServerAddressStreamProviders - Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library [httpPath=/employees, httpMethod=GET, requestId=2eaf89de-6d4c-45cc-b174-08fe1a3b1da2]
+Exception in thread "DefaultDispatcher-worker-1" kotlinx.coroutines.CoroutinesInternalError: Fatal exception in coroutines machinery for CancellableContinuation(DispatchedContinuation[Dispatchers.Default, Continuation at kotlinx.coroutines.channels.BufferedChannel.receiveCatchingOnNoWaiterSuspend-GKJJFZk(BufferedChannel.kt:3056)@4dee2ffb]){Completed}@2a292768. Please read KDoc to 'handleFatalException' method and report this incident to maintainers
+	at kotlinx.coroutines.DispatchedTask.handleFatalException$kotlinx_coroutines_core(DispatchedTask.kt:146)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:117)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:584)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:793)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:697)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:684)
+	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: io.micronaut.http.bind.binders.DelegatingCoroutineContext@2f28f27b
+Caused by: java.lang.NullPointerException
+	at example.micronaut.txwithr2dbc.shared.MdcPropagationContext.updateThreadContext(MdcPropagationContext.kt:13)
+	at example.micronaut.txwithr2dbc.shared.MdcPropagationContext.updateThreadContext(MdcPropagationContext.kt:6)
+	at io.micronaut.core.propagation.PropagatedContextImpl.updateThreadState(PropagatedContextImpl.java:218)
+	at io.micronaut.core.propagation.PropagatedContextImpl.propagate(PropagatedContextImpl.java:200)
+	at io.micronaut.core.async.propagation.MicronautPropagatedContext.updateThreadContext(MicronautPropagatedContext.kt:36)
+	at io.micronaut.core.async.propagation.MicronautPropagatedContext.updateThreadContext(MicronautPropagatedContext.kt:30)
+	at kotlinx.coroutines.internal.ThreadContextKt.updateThreadContext(ThreadContext.kt:78)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:225)
+	... 4 more
+2023-09-19T16:39:35.019Z INFO EmployeeDataAccessAdapter - before [httpPath=/employees, httpMethod=GET, requestId=6a2c7f40-5d9c-4b25-802b-ebc00197de66]
+2023-09-19T16:39:35.022Z INFO EmployeeDataAccessAdapter - after/flow [httpPath=/employees, httpMethod=GET, requestId=6a2c7f40-5d9c-4b25-802b-ebc00197de66]
+Exception in thread "DefaultDispatcher-worker-2" kotlinx.coroutines.CoroutinesInternalError: Fatal exception in coroutines machinery for CancellableContinuation(DispatchedContinuation[Dispatchers.Default, Continuation at kotlinx.coroutines.channels.BufferedChannel.receiveCatchingOnNoWaiterSuspend-GKJJFZk(BufferedChannel.kt:3056)@4d3942d]){Completed}@a147ac7. Please read KDoc to 'handleFatalException' method and report this incident to maintainers
+	at kotlinx.coroutines.DispatchedTask.handleFatalException$kotlinx_coroutines_core(DispatchedTask.kt:146)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:117)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:584)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:793)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:697)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:684)
+	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: io.micronaut.http.bind.binders.DelegatingCoroutineContext@5343f748
+Caused by: java.lang.NullPointerException
+	at example.micronaut.txwithr2dbc.shared.MdcPropagationContext.updateThreadContext(MdcPropagationContext.kt:13)
+	at example.micronaut.txwithr2dbc.shared.MdcPropagationContext.updateThreadContext(MdcPropagationContext.kt:6)
+	at io.micronaut.core.propagation.PropagatedContextImpl.updateThreadState(PropagatedContextImpl.java:218)
+	at io.micronaut.core.propagation.PropagatedContextImpl.propagate(PropagatedContextImpl.java:200)
+	at io.micronaut.core.async.propagation.MicronautPropagatedContext.updateThreadContext(MicronautPropagatedContext.kt:36)
+	at io.micronaut.core.async.propagation.MicronautPropagatedContext.updateThreadContext(MicronautPropagatedContext.kt:30)
+	at kotlinx.coroutines.internal.ThreadContextKt.updateThreadContext(ThreadContext.kt:78)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:225)
+	... 4 more
+2023-09-19T16:39:36.563Z INFO EmployeeDataAccessAdapter - before [httpPath=/employees, httpMethod=GET, requestId=c90a866b-8632-45c6-9188-98cc01754a8f]
+2023-09-19T16:39:36.563Z INFO EmployeeDataAccessAdapter - after/flow [httpPath=/employees, httpMethod=GET, requestId=c90a866b-8632-45c6-9188-98cc01754a8f]
+2023-09-19T16:39:36.585Z INFO EmployeeDataAccessAdapter - after/list [httpPath=/employees, httpMethod=GET, requestId=c90a866b-8632-45c6-9188-98cc01754a8f]
+2023-09-19T16:41:02.362Z INFO Micronaut - Embedded Application shutting down
+2023-09-19T16:41:02.379Z INFO HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-09-19T16:41:02.382Z INFO HikariDataSource - HikariPool-1 - Shutdown completed.

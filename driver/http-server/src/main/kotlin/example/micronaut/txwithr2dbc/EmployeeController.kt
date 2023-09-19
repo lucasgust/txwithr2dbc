@@ -10,6 +10,7 @@ import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.PathVariable
 import io.micronaut.http.annotation.Post
+import org.instancio.Instancio
 import java.util.UUID
 
 @Controller("/employees")
@@ -30,7 +31,7 @@ class EmployeeController(
     }
 
     @Post(produces = [APPLICATION_JSON])
-    suspend fun create(@Body employee: Employee): Employee {
-        return createEmployeePort.create(employee = employee)
+    suspend fun create(@Body employee: Employee? = null): Employee {
+        return createEmployeePort.create(employee = employee ?: Instancio.create(Employee::class.java))
     }
 }

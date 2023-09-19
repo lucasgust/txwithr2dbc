@@ -7,6 +7,8 @@ import example.micronaut.txwithr2dbc.employee.repository.EmployeeReadRepository
 import example.micronaut.txwithr2dbc.employee.repository.EmployeeWriteRepository
 import jakarta.inject.Singleton
 import kotlinx.coroutines.flow.toList
+import org.slf4j.LoggerFactory
+import java.util.UUID
 
 @Singleton
 open class EmployeeDataAccessAdapter(
@@ -18,15 +20,23 @@ open class EmployeeDataAccessAdapter(
         return employeeWriteRepository.save(employee.toEntity()).toModel()
     }
 
-    override suspend fun deleteAll() {
-        employeeWriteRepository.deleteAll()
-    }
-
-    override suspend fun count(): Long {
-        return employeeReadRepository.count()
+    override suspend fun findById(id: UUID): Employee? {
+        logger.info("before") // context is fine
+        val result = employeeReadRepository.findById(id)
+        logger.info("after") // context is lost
+        return result?.toModel()
     }
 
     override suspend fun findAll(): List<Employee> {
-        return employeeReadRepository.findAll().toList().map { it.toModel() }
+        logger.info("before") // context is fine
+        val result = employeeReadRepository.findAll()
+        logger.info("after/flow") // context is fine
+        val resultList = result.toList().map { it.toModel() }
+        logger.info("after/list")// context is lost
+        return resultList
+    }
+
+    companion object {
+        private val logger = LoggerFactory.getLogger(EmployeeDataAccessAdapter::class.java)
     }
 }

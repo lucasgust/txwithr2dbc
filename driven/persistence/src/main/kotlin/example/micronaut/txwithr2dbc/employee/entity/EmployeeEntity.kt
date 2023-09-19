@@ -6,6 +6,8 @@ import io.micronaut.data.annotation.MappedEntity
 import java.util.UUID
 import example.micronaut.txwithr2dbc.employee.model.Employee as EmployeeModel
 
+typealias EmployeeEntity = Employee
+
 @MappedEntity("employee")
 data class Employee(
 
@@ -22,7 +24,7 @@ data class Employee(
     )
 }
 
-fun EmployeeModel.toEntity() = Employee(
+fun EmployeeModel.toEntity() = EmployeeEntity(
     id = id,
     name = name,
 )

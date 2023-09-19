@@ -4,10 +4,11 @@ import io.micronaut.gradle.MicronautTestRuntime.KOTEST_5
 val kotestRunnerVersion: String by project
 val mockkVersion: String by project
 val instancioVersion: String by project
+val assertjVersion: String by project
 
 plugins {
     // https://plugins.gradle.org/plugin/io.micronaut.application
-    val micronautVersion = "4.0.2"
+    val micronautVersion = "4.1.1"
     // https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow
     val shadowVersion = "8.1.1"
 
@@ -72,18 +73,21 @@ dependencies {
         ":http-server"
     ).forEach {
         implementation(project(it))
+        testImplementation(project(it))
     }
 
     kaptTest("io.micronaut.data:micronaut-data-processor")
 
-    testApi("io.kotest:kotest-runner-junit5-jvm:$kotestRunnerVersion")
-    testApi("io.micronaut.test:micronaut-test-kotest5")
-    testApi("io.mockk:mockk:$mockkVersion")
-    testApi("org.instancio:instancio-junit:$instancioVersion")
-    testImplementation("org.jetbrains.kotlin:kotlin-reflect")
-
+    testImplementation("io.micronaut.data:micronaut-data-jdbc")
     testImplementation("io.micronaut.data:micronaut-data-r2dbc")
+    testImplementation("io.micronaut.test:micronaut-test-rest-assured")
     testImplementation("com.github.tomakehurst:wiremock:3.0.0-beta-10")
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:$kotestRunnerVersion")
+    testImplementation("io.micronaut.test:micronaut-test-kotest5")
+    testImplementation("io.mockk:mockk:$mockkVersion")
+    testImplementation("org.instancio:instancio-junit:$instancioVersion")
+    testImplementation("org.assertj:assertj-core:$assertjVersion")
+    testImplementation("org.jetbrains.kotlin:kotlin-reflect")
 
     testResourcesService("mysql:mysql-connector-java")
 }

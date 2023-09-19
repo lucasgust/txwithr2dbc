@@ -44,12 +44,9 @@
     </appender>
 
     <logger name="example.micronaut.txwithr2dbc" level="${LOG_LEVEL:-DEBUG}"/>
-    <logger name="io.micronaut.data" level="TRACE"/>
-    <logger name="io.micronaut.context.env" level="TRACE"/>
-    <logger name="io.micronaut.test" level="TRACE"/>
-    <logger name="io.micronaut.testresources" level="TRACE"/>
+    <logger name="io.micronaut.data" level="INFO"/>
+    <logger name="io.micronaut.context.env" level="INFO"/>
     <logger name="io.r2dbc.pool" level="INFO"/>
-    <logger name="org.apache.kafka" level="ERROR"/>
 
     <root level="${LOG_LEVEL:-INFO}">
         <appender-ref ref="${LOG_FORMAT:-PLAIN_TEXT}"/>

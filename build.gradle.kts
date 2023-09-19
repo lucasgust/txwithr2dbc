@@ -42,18 +42,14 @@ allprojects {
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactive")
         implementation("io.micronaut.kotlin:micronaut-kotlin-extension-functions")
         implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
-        implementation("io.projectreactor.kotlin:reactor-kotlin-extensions:$reactorKotlinExtensionVersion")
-        implementation("io.micronaut:micronaut-aop")
-        implementation("io.micronaut.reactor:micronaut-reactor")
-        implementation("io.micronaut.data:micronaut-data-jdbc")
-
         implementation("io.micronaut:micronaut-inject")
+        implementation("io.micronaut.reactor:micronaut-reactor")
+        implementation("io.projectreactor.kotlin:reactor-kotlin-extensions:$reactorKotlinExtensionVersion")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-
-        runtimeOnly("net.logstash.logback:logstash-logback-encoder:$logbackEncoderVersion") {
-            exclude("ch.qos.logback")
-            implementation("ch.qos.logback:logback-classic:$logbackClassicVersion")
-        }
+        implementation("jakarta.annotation:jakarta.annotation-api")
+        implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+        implementation("net.logstash.logback:logstash-logback-encoder:$logbackEncoderVersion")
+        implementation("ch.qos.logback:logback-classic:$logbackClassicVersion")
 
         compileOnly("org.graalvm.nativeimage:svm")
         runtimeOnly("org.yaml:snakeyaml")

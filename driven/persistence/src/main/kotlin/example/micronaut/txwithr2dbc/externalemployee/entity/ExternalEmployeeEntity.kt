@@ -6,6 +6,8 @@ import io.micronaut.data.annotation.EmbeddedId
 import io.micronaut.data.annotation.MappedEntity
 import example.micronaut.txwithr2dbc.externalemployee.model.ExternalEmployee as ExternalEmployeeModel
 
+typealias ExternalEmployeeEntity = ExternalEmployee
+
 @MappedEntity("external_employee")
 data class ExternalEmployee(
 
@@ -21,7 +23,7 @@ data class ExternalEmployee(
 }
 
 
-fun ExternalEmployeeModel.toEntity() = ExternalEmployee(
+fun ExternalEmployeeModel.toEntity() = ExternalEmployeeEntity(
     id = ExternalEmployeeId(
         employee = employee.toEntity(),
         companyName = companyName
